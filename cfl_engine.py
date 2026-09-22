@@ -397,6 +397,11 @@ def cegar_search(model, win_vars, remaining, base_overrides, verify_fn, verbose=
     solver = cp_model.CpSolver()
     solver.parameters.enumerate_all_solutions = True
     solver.parameters.max_time_in_seconds = max_time_seconds
+    # Explicit, not left to OR-Tools' default (documented as 8 parallel
+    # workers) -- a constrained free-tier host may only have a small
+    # shared slice of one real core, where several competing workers can
+    # be slower than one, not just proportionally slower.
+    solver.parameters.num_search_workers = 1
     cb = _Callback()
     solver.Solve(model, cb)
     exhausted = (cb.witness is None) and (not cb.hit_cap)
@@ -567,6 +572,7 @@ def solve_elimination(games, team, target, overrides=None, max_iterations=50, ve
     def solve_feasible(model):
         s = cp_model.CpSolver()
         s.parameters.max_time_in_seconds = 15
+        s.parameters.num_search_workers = 1
         return s.Solve(model) in (cp_model.OPTIMAL, cp_model.FEASIBLE), s
 
     def fix_team_best_case(model, wv):
@@ -757,6 +763,7 @@ def solve_status(games, team, target, overrides=None, ambiguous_max_iterations=2
     def solve_feasible(model):
         s = cp_model.CpSolver()
         s.parameters.max_time_in_seconds = 15
+        s.parameters.num_search_workers = 1
         return s.Solve(model) in (cp_model.OPTIMAL, cp_model.FEASIBLE), s
 
     def fix_team_best_case(model, wv):
