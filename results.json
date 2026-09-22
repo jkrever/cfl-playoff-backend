@@ -1,0 +1,112 @@
+{
+  "current_week": 17,
+  "week_games": [
+    6655,
+    6654,
+    6653,
+    6652
+  ],
+  "east_results": {
+    "MTL": {
+      "clinch": [],
+      "already_clinched": "CLINCHED (guaranteed top-2 in division, safe from any tiebreaker/crossover)",
+      "eliminate": [],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": "CLINCHED (guaranteed top-2 in division, safe from any tiebreaker/crossover)"
+    },
+    "TOR": {
+      "clinch": [],
+      "already_clinched": "CLINCHED (guaranteed top-2 in division, safe from any tiebreaker/crossover)",
+      "eliminate": [],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": "CLINCHED (guaranteed top-2 in division, safe from any tiebreaker/crossover)"
+    },
+    "HAM": {
+      "clinch": [],
+      "already_clinched": null,
+      "eliminate": [
+        "EDM beats HAM AND CGY beats OTT",
+        "EDM beats HAM AND BC beats SSK AND WPG beats TOR"
+      ],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": null
+    },
+    "OTT": {
+      "clinch": [],
+      "already_clinched": null,
+      "eliminate": [],
+      "already_eliminated": "ELIMINATED (verified: no scenario in the survival region holds up under real tiebreaker/crossover checking)",
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": null
+    }
+  },
+  "west_results": {
+    "EDM": {
+      "clinch": [],
+      "already_clinched": "CLINCHED (verified: all 73600 distinct candidate scenarios confirmed safe using real head-to-head/divisional tiebreaker data)",
+      "eliminate": [],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": null
+    },
+    "SSK": {
+      "clinch": [
+        "OTT beats CGY AND SSK beats BC AND TOR beats WPG"
+      ],
+      "already_clinched": null,
+      "eliminate": [],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": null
+    },
+    "BC": {
+      "clinch": [],
+      "already_clinched": null,
+      "eliminate": [],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": null
+    },
+    "WPG": {
+      "clinch": [],
+      "already_clinched": null,
+      "eliminate": [],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": null
+    },
+    "CGY": {
+      "clinch": [],
+      "already_clinched": null,
+      "eliminate": [],
+      "already_eliminated": null,
+      "division": [],
+      "already_clinched_division": null,
+      "home_game": [],
+      "already_clinched_home_game": null
+    }
+  },
+  "cross_check_ok": true,
+  "east_summary_text": "\nEAST DIVISION\n  MTL has ALREADY CLINCHED a playoff spot.\n  MTL has ALREADY CLINCHED a home playoff game.\n  TOR has ALREADY CLINCHED a playoff spot.\n  TOR has ALREADY CLINCHED a home playoff game.\n  HAM is eliminated from playoff contention if EDM beats HAM AND CGY beats OTT.\n  HAM is eliminated from playoff contention if EDM beats HAM AND BC beats SSK AND WPG beats TOR.\n  OTT has ALREADY BEEN ELIMINATED from playoff contention.",
+  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.\n  SSK clinches a playoff spot if OTT beats CGY AND SSK beats BC AND TOR beats WPG.",
+  "generated_at": "2026-09-22T18:56:04.554537+00:00"
+}
