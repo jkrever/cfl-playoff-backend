@@ -2,9 +2,7 @@
   "current_week": 17,
   "week_games": [
     6655,
-    6654,
-    6653,
-    6652
+    6654
   ],
   "east_results": {
     "MTL": {
@@ -31,8 +29,7 @@
       "clinch": [],
       "already_clinched": null,
       "eliminate": [
-        "EDM beats HAM AND CGY beats OTT",
-        "EDM beats HAM AND BC beats SSK AND WPG beats TOR"
+        "EDM beats HAM AND CGY beats OTT"
       ],
       "already_eliminated": null,
       "division": [],
@@ -54,7 +51,7 @@
   "west_results": {
     "EDM": {
       "clinch": [],
-      "already_clinched": "CLINCHED (verified: all 73600 distinct candidate scenarios confirmed safe using real head-to-head/divisional tiebreaker data)",
+      "already_clinched": "CLINCHED (verified: all 19584 distinct candidate scenarios confirmed safe using real head-to-head/divisional tiebreaker data)",
       "eliminate": [],
       "already_eliminated": null,
       "division": [],
@@ -63,9 +60,7 @@
       "already_clinched_home_game": null
     },
     "SSK": {
-      "clinch": [
-        "OTT beats CGY AND SSK beats BC AND TOR beats WPG"
-      ],
+      "clinch": [],
       "already_clinched": null,
       "eliminate": [],
       "already_eliminated": null,
@@ -106,7 +101,7 @@
     }
   },
   "cross_check_ok": true,
-  "east_summary_text": "\nEAST DIVISION\n  MTL has ALREADY CLINCHED a playoff spot.\n  MTL has ALREADY CLINCHED a home playoff game.\n  TOR has ALREADY CLINCHED a playoff spot.\n  TOR has ALREADY CLINCHED a home playoff game.\n  HAM is eliminated from playoff contention if EDM beats HAM AND CGY beats OTT.\n  HAM is eliminated from playoff contention if EDM beats HAM AND BC beats SSK AND WPG beats TOR.\n  OTT has ALREADY BEEN ELIMINATED from playoff contention.",
-  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.\n  SSK clinches a playoff spot if OTT beats CGY AND SSK beats BC AND TOR beats WPG.",
-  "generated_at": "2026-09-25T22:24:55.943843+00:00"
+  "east_summary_text": "\nEAST DIVISION\n  MTL has ALREADY CLINCHED a playoff spot.\n  MTL has ALREADY CLINCHED a home playoff game.\n  TOR has ALREADY CLINCHED a playoff spot.\n  TOR has ALREADY CLINCHED a home playoff game.\n  HAM is eliminated from playoff contention if EDM beats HAM AND CGY beats OTT.\n  OTT has ALREADY BEEN ELIMINATED from playoff contention.",
+  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.",
+  "generated_at": "2026-09-26T06:19:54.612932+00:00"
 }
