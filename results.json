@@ -2,9 +2,7 @@
   "current_week": 18,
   "week_games": [
     6659,
-    6658,
-    6657,
-    6656
+    6658
   ],
   "east_results": {
     "MTL": {
@@ -43,7 +41,7 @@
       "clinch": [],
       "already_clinched": null,
       "eliminate": [],
-      "already_eliminated": "ELIMINATED (verified: no scenario in the survival region holds up under real tiebreaker/crossover checking)",
+      "already_eliminated": "ELIMINATED (even in best case, guaranteed to be passed by 3+ rivals, AND no realistic crossover-in path exists)",
       "division": [],
       "already_clinched_division": null,
       "home_game": [],
@@ -53,7 +51,7 @@
   "west_results": {
     "EDM": {
       "clinch": [],
-      "already_clinched": "CLINCHED (verified: all 1408 distinct candidate scenarios confirmed safe using real head-to-head/divisional tiebreaker data)",
+      "already_clinched": "CLINCHED (verified: all 160 distinct candidate scenarios confirmed safe using real head-to-head/divisional tiebreaker data)",
       "eliminate": [],
       "already_eliminated": null,
       "division": [],
@@ -62,9 +60,7 @@
       "already_clinched_home_game": null
     },
     "SSK": {
-      "clinch": [
-        "SSK beats CGY"
-      ],
+      "clinch": [],
       "already_clinched": null,
       "eliminate": [],
       "already_eliminated": null,
@@ -106,6 +102,6 @@
   },
   "cross_check_ok": true,
   "east_summary_text": "\nEAST DIVISION\n  MTL has ALREADY CLINCHED a playoff spot.\n  MTL clinches the division title if MTL beats WPG AND BC beats TOR.\n  MTL has ALREADY CLINCHED a home playoff game.\n  TOR has ALREADY CLINCHED a playoff spot.\n  TOR has ALREADY CLINCHED a home playoff game.\n  HAM has ALREADY BEEN ELIMINATED from playoff contention.\n  OTT has ALREADY BEEN ELIMINATED from playoff contention.",
-  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.\n  SSK clinches a playoff spot if SSK beats CGY.",
-  "generated_at": "2026-10-02T22:18:43.464839+00:00"
+  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.",
+  "generated_at": "2026-10-03T06:23:38.284794+00:00"
 }
