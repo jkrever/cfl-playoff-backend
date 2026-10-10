@@ -2,9 +2,7 @@
   "current_week": 19,
   "week_games": [
     6663,
-    6662,
-    6661,
-    6660
+    6662
   ],
   "east_results": {
     "MTL": {
@@ -51,18 +49,13 @@
   "west_results": {
     "EDM": {
       "clinch": [],
-      "already_clinched": "CLINCHED (verified: all 64 distinct candidate scenarios confirmed safe using real head-to-head/divisional tiebreaker data)",
+      "already_clinched": "CLINCHED (guaranteed top-2 in division, safe from any tiebreaker/crossover)",
       "eliminate": [],
       "already_eliminated": null,
-      "division": [
-        "OTT beats BC AND EDM beats HAM"
-      ],
-      "already_clinched_division": null,
-      "home_game": [
-        "MTL beats SSK",
-        "EDM beats HAM"
-      ],
-      "already_clinched_home_game": null
+      "division": [],
+      "already_clinched_division": "CLINCHED DIVISION (guaranteed strictly ahead of every rival, using real head-to-head tiebreak data)",
+      "home_game": [],
+      "already_clinched_home_game": "CLINCHED (guaranteed top-2 in division, safe from any tiebreaker/crossover)"
     },
     "SSK": {
       "clinch": [],
@@ -75,9 +68,7 @@
       "already_clinched_home_game": null
     },
     "BC": {
-      "clinch": [
-        "BC beats OTT"
-      ],
+      "clinch": [],
       "already_clinched": null,
       "eliminate": [],
       "already_eliminated": null,
@@ -111,6 +102,6 @@
   },
   "cross_check_ok": false,
   "east_summary_text": "\nEAST DIVISION\n  MTL has ALREADY CLINCHED a playoff spot.\n  MTL has ALREADY CLINCHED the division title.\n  MTL has ALREADY CLINCHED a home playoff game.\n  TOR has ALREADY CLINCHED a playoff spot.\n  TOR has ALREADY CLINCHED a home playoff game.\n  HAM has ALREADY BEEN ELIMINATED from playoff contention.\n  OTT has ALREADY BEEN ELIMINATED from playoff contention.",
-  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.\n  EDM clinches the division title if OTT beats BC AND EDM beats HAM.\n  EDM clinches a home playoff game if MTL beats SSK.\n  EDM clinches a home playoff game if EDM beats HAM.\n  BC clinches a playoff spot if BC beats OTT.\n  CGY clinches a playoff spot if CGY beats WPG.",
-  "generated_at": "2026-10-09T22:16:57.434669+00:00"
+  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.\n  EDM has ALREADY CLINCHED the division title.\n  EDM has ALREADY CLINCHED a home playoff game.\n  CGY clinches a playoff spot if CGY beats WPG.",
+  "generated_at": "2026-10-10T06:20:16.586424+00:00"
 }
