@@ -2,13 +2,25 @@ name: Run CFL playoff scan
 
 on:
   schedule:
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 22 * * *"
+    # Checks every 30 minutes whether a week has just finished. Each check
+    # takes a few seconds and only starts the full ~12 minute scan when the
+    # API shows the week's last game is final (see run_and_save.py), so
+    # it never runs mid-week. GitHub's schedule is best-effort and can run a
+    # few minutes late.
+    - cron: "*/30 * * * *"
+  # Lets you trigger a run manually from the Actions tab on GitHub,
+  # without waiting for the next scheduled time -- useful for testing,
+  # or for checking scenarios right after a game you know just ended.
   workflow_dispatch:
 
+# Lets this workflow commit the updated results.json back to the repo.
 permissions:
   contents: write
+
+# Never let two runs overlap (a scan takes ~12 min, checks come every 30).
+concurrency:
+  group: cfl-scan
+  cancel-in-progress: false
 
 jobs:
   scan:
@@ -26,6 +38,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run the scan
+        env:
+          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' }}
         run: python run_and_save.py
 
       - name: Commit and push the updated results
