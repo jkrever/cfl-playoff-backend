@@ -534,7 +534,18 @@ def team_could_achieve_target(games, overrides, team, target):
         # Path B: could team, as their own division's 4th-place finisher,
         # cross INTO the other division's 3rd seed?
         pathB_possible = False
-        if top3 is not True:  # team could be 4th (or worse)
+        # Only a team that can finish EXACTLY 4th (0-indexed position 3) can
+        # cross over. A team locked into 5th or worse never can, so the
+        # check is on the tied group's position range, not just "not top-3".
+        pos_, best_pos, worst_pos = 0, None, None
+        for item in div_order:
+            grp = item if isinstance(item, frozenset) else {item}
+            if team in grp:
+                best_pos, worst_pos = pos_, pos_ + len(grp) - 1
+                break
+            pos_ += len(grp)
+        can_be_4th = best_pos is not None and best_pos <= 3 <= worst_pos
+        if can_be_4th:
             other_3rd = _group_at_position(other_order, 2)
             if other_3rd is not None and any(team_pts > totals[c]["pts"] for c in other_3rd):
                 pathB_possible = True
@@ -1202,7 +1213,9 @@ def cross_check_clinched_against_api(standings_json, computed_clinched_teams):
         if division["division_name"] == "unified":
             continue
         for team in division["standings"]:
-            if team.get("flags") and "x" in team["flags"]:
+            # x = clinched playoff spot; y = clinched division; z = clinched
+            # first overall. All three imply a clinched playoff berth.
+            if team.get("flags") and any(f in team["flags"] for f in "xyz"):
                 api_clinched.add(team["abbreviation"])
     computed = set(computed_clinched_teams)
     if api_clinched != computed:
