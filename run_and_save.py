@@ -6,13 +6,47 @@ script just calls it and saves the output instead of returning it from
 an API or printing it to a notebook cell.
 """
 import json
+import os
 import sys
 from datetime import datetime, timezone
 
 import cfl_engine
 
 
+def should_run():
+    """Cheap gate (a couple of seconds, no solver): only run the heavy scan
+    when a week has just been COMPLETED. The "current week" is the earliest
+    week that still has an unplayed game, so it only changes once every game
+    of the previous week has a final score. If it matches the week already
+    saved in results.json, either that week is still in progress or we've
+    already scanned this state -- nothing to do. A manual run from the
+    Actions tab (FORCE_RUN=true) always runs."""
+    if os.environ.get("FORCE_RUN", "").lower() == "true":
+        print("Manual run -- skipping the week-complete check.")
+        return True
+    try:
+        fixtures = cfl_engine.fetch_pims_fixtures(cfl_engine.SEASON_ID)
+        games = cfl_engine.convert_fixtures_to_games(fixtures)
+        _, live_week = cfl_engine.get_current_week_games_and_number(games)
+    except ValueError:
+        print("No unplayed regular-season games left -- season is complete. Nothing to do.")
+        return False
+    try:
+        with open("results.json") as f:
+            saved_week = json.load(f).get("current_week")
+    except (FileNotFoundError, ValueError):
+        print("No saved results yet -- running.")
+        return True
+    if live_week == saved_week:
+        print(f"Week {live_week} is still in progress (or already scanned) -- skipping.")
+        return False
+    print(f"Week {saved_week} is complete; Week {live_week} is next -- running the scan.")
+    return True
+
+
 def main():
+    if not should_run():
+        return
     print("Starting scheduled scan...")
     try:
         result = cfl_engine.run_full_scan(send_email=False, verbose=True)
