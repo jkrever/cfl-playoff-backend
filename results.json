@@ -80,9 +80,13 @@
       "already_clinched_home_game": "CLINCHED (guaranteed top-2 in division, safe from any tiebreaker/crossover)"
     },
     "WPG": {
-      "clinch": [],
-      "already_clinched": "CLINCHED (verified: all 16 distinct candidate scenarios confirmed safe using real head-to-head/divisional tiebreaker data)",
-      "eliminate": [],
+      "clinch": [
+        "WPG beats BC"
+      ],
+      "already_clinched": null,
+      "eliminate": [
+        "BC beats WPG"
+      ],
       "already_eliminated": null,
       "division": [],
       "already_clinched_division": null,
@@ -90,18 +94,23 @@
       "already_clinched_home_game": null
     },
     "CGY": {
-      "clinch": [],
+      "clinch": [
+        "BC beats WPG"
+      ],
       "already_clinched": null,
-      "eliminate": [],
-      "already_eliminated": "ELIMINATED (verified: no scenario in the survival region holds up under real tiebreaker/crossover checking)",
+      "eliminate": [
+        "WPG beats BC"
+      ],
+      "already_eliminated": null,
       "division": [],
       "already_clinched_division": null,
       "home_game": [],
       "already_clinched_home_game": null
     }
   },
-  "cross_check_ok": false,
+  "cross_check_ok": true,
   "east_summary_text": "\nEAST DIVISION\n  MTL has ALREADY CLINCHED a playoff spot.\n  MTL has ALREADY CLINCHED the division title.\n  MTL has ALREADY CLINCHED a home playoff game.\n  TOR has ALREADY CLINCHED a playoff spot.\n  TOR has ALREADY CLINCHED a home playoff game.\n  HAM has ALREADY BEEN ELIMINATED from playoff contention.\n  OTT has ALREADY BEEN ELIMINATED from playoff contention.",
-  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.\n  EDM has ALREADY CLINCHED the division title.\n  EDM has ALREADY CLINCHED a home playoff game.\n  SSK has ALREADY CLINCHED a playoff spot.\n  BC has ALREADY CLINCHED a playoff spot.\n  BC has ALREADY CLINCHED a home playoff game.\n  WPG has ALREADY CLINCHED a playoff spot.\n  CGY has ALREADY BEEN ELIMINATED from playoff contention.",
-  "generated_at": "2026-10-17T22:12:27.727268+00:00"
+  "west_summary_text": "\nWEST DIVISION\n  EDM has ALREADY CLINCHED a playoff spot.\n  EDM has ALREADY CLINCHED the division title.\n  EDM has ALREADY CLINCHED a home playoff game.\n  SSK has ALREADY CLINCHED a playoff spot.\n  BC has ALREADY CLINCHED a playoff spot.\n  BC has ALREADY CLINCHED a home playoff game.\n  WPG clinches a playoff spot if WPG beats BC.\n  WPG is eliminated from playoff contention if BC beats WPG.\n  CGY clinches a playoff spot if BC beats WPG.\n  CGY is eliminated from playoff contention if WPG beats BC.",
+  "generated_at": "2026-10-18T18:11:20.592763+00:00",
+  "completed_fingerprint": "4c08f695e7218dd3"
 }
