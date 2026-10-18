@@ -1197,7 +1197,12 @@ def convert_fixtures_to_games(fixtures_json):
             continue
         games.append({
             "gm": fx["ID"], "home": TEAM_ID_TO_ABBREV[home_id], "away": TEAM_ID_TO_ABBREV[away_id],
-            "wk": fx["week"], "hpf": fx.get("home_team_score"), "apf": fx.get("away_team_score"),
+            "wk": fx["week"],
+            # Only a game the API marks Finished counts as played. A game that is
+            # about to start or in progress can already carry placeholder or
+            # partial scores; treating those as final corrupts the standings.
+            "hpf": fx.get("home_team_score") if str(fx.get("game_status", "")).lower() in ("finished", "final") else None,
+            "apf": fx.get("away_team_score") if str(fx.get("game_status", "")).lower() in ("finished", "final") else None,
         })
     print(f"Converted {len(games)} regular-season games ({skipped_preseason} preseason, "
           f"{skipped_playoff_placeholder} playoff-placeholder, {skipped_unknown_team} unknown-team skipped).")
